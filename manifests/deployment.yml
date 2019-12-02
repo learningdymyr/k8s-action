@@ -2,7 +2,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: pets
+  name: k8s-demo
 spec:
   selector:
     matchLabels:
@@ -14,7 +14,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: canp
+      - name: gideon
         image: gideon.azurecr.io/k8sdemo:${{ github.sha }}
         ports:
         - containerPort: 80
@@ -30,6 +30,6 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-    targetPort: 80
+    targetPort: 3052
   selector:
     app: nginx
