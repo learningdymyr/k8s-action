@@ -17,7 +17,7 @@ spec:
       - name: gideon
         image: gideon.azurecr.io/k8sdemo:${{ github.sha }}
         ports:
-        - containerPort: 80
+        - containerPort: 3052
 ---
 apiVersion: v1
 kind: Service
